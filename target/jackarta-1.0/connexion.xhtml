@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+<h:head>
+    <title>Connexion</title>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 380px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-top: 6px solid #c62828;
+        }
+
+        h2 {
+            text-align: center;
+            color: #c62828;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #c62828;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link a {
+            color: #c62828;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</h:head>
+
+<h:body>
+
+    <div class="container">
+
+        <h:form>
+
+            <h2>Connexion</h2>
+
+            <label>Email</label>
+            <h:inputText id="email"
+                         value="#{welcomeBean.email}"
+                         required="true" />
+            <h:message for="email" styleClass="error" />
+
+            <label>Mot de passe</label>
+            <h:inputSecret id="password"
+                           value="#{welcomeBean.password}"
+                           required="true" />
+            <h:message for="password" styleClass="error" />
+
+            <h:messages globalOnly="true" styleClass="error" />
+
+            <br />
+
+            <h:commandButton value="Se connecter"
+                             action="#{welcomeBean.sAuthentifier}"
+                             styleClass="btn" />
+
+            <div class="link">
+                <h:link outcome="ajouter_utilisateur.xhtml"
+                        value="Créer un compte" />
+            </div>
+
+        </h:form>
+
+    </div>
+
+</h:body>
+</html>

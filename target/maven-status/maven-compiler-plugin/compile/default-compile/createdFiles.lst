@@ -1,0 +1,5 @@
+com\jakarta\udb\jackarta\ApplicationConfig.class
+com\jakarta\udb\jackarta\resources\WeatherResource.class
+com\jakarta\udb\jackarta\resources\WeatherService.class
+com\jakarta\udb\jackarta\resources\WeatherDTO.class
+com\jakarta\udb\jackarta\resources\JakartaEE10Resource.class
